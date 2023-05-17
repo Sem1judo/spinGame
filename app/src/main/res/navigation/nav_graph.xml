@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loadingFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="sem.ua.slot.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/actionLoginFragmentToSpinFragment"
+            app:destination="@id/spinFragment">
+            <argument
+                android:name="inputValue"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/spinFragment"
+        android:name="sem.ua.slot.ui.SpinFragment"
+        android:label="SpinFragment" />
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="sem.ua.slot.ui.LoadingFragment"
+        android:label="LoadingFragment">
+        <action
+            android:id="@+id/action_loadingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>
